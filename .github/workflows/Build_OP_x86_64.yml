@@ -14,7 +14,10 @@ on:
         description: 'SSH远程'
         required: false
         default: 'true'
-
+env: 
+  REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
+  TZ: Asia/Shanghai
+  
 jobs:
   build:
     runs-on: ubuntu-latest
