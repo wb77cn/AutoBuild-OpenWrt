@@ -52,6 +52,11 @@ jobs:
         sudo -E apt-get -y autoremove --purge
         sudo -E apt-get clean
 
+    - name: 检测脚本设置
+      run: |
+        source "${GITHUB_WORKSPACE}/settings.ini"
+        echo "SSH_ACTIONS=${SSH_ACTIONS}" >> $GITHUB_ENV
+        
     - name: Clone source code
       env: 
         REPO_URL: https://github.com/coolsnowwolf/lede
